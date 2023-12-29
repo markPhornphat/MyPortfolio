@@ -9,7 +9,15 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc">
+        <li>C Programming</li>
+        <li>HTML</li>
+        <li>CSS</li>
         <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>ReactNative</li>
+        <li>Next.js</li>
+        <li>Python</li>
       </ul>
     ),
   },
@@ -18,7 +26,24 @@ const TAB_DATA = [
     id: "educations",
     content: (
       <ul className="list-disc">
-        <li>Suankularb Wittayalai Thonburi</li>
+        <li>
+          Suankularb Wittayalai Thonburi
+          <ul className="list-disc pl-5">
+            <li>
+              <span className="font-semibold">GPAX: </span>
+              3.61
+            </li>
+          </ul>
+        </li>
+        <li>
+          King Mongkut's University of Technology Thonburi (KMUTT)
+          <ul className="list-disc pl-5">
+            <li>
+              <span className="font-semibold">GPAX: </span>
+              3.73
+            </li>
+          </ul>
+        </li>
       </ul>
     ),
   },
@@ -27,7 +52,10 @@ const TAB_DATA = [
     id: "experiences",
     content: (
       <ul className="list-disc">
-        <li>Teaching Assistance of CPE101</li>
+        <li>CPE openhouse | 2022</li>
+        <li>CPE Pre-Freshy | 2022</li>
+        <li>Participant of Intania Case Competition | 2023</li>
+        <li>Teaching Assistance of CPE101 | 2023</li>
       </ul>
     ),
   },

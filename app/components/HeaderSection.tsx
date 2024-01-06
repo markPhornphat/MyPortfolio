@@ -10,7 +10,7 @@ const HeaderSection = () => {
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal justify-self-start font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-slate-500">
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
             </span>
             <AnimationComponent />
           </h1>
@@ -26,11 +26,16 @@ bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
             >
               Hire me
             </Link>
-            <button className="px-1.5 py-1.5 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-gray-200 mt-5">
+            <Link
+              className="px-1.5 py-1.5 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-gray-200 mt-5"
+              href={
+                "https://drive.google.com/file/d/1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm/view?usp=drive_link"
+              }
+            >
               <span className="block bg-white hover:bg-[#ffffff33] rounded-full px-5 py-2 transition duration-150">
                 Download CV
               </span>
-            </button>
+            </Link>
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">

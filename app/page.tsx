@@ -4,16 +4,20 @@ import HeaderSection from "./components/HeaderSection";
 import NavBar from "./components/navbar/NavBar";
 import AboutSection from "./components/About/AboutSection";
 import ProjectSection from "./components/Project/ProjectSection";
+import ContactSection from "./components/Contact/ContactSection";
+import FooterSection from "./components/FooterSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col ">
+    <main className="flex min-h-screen flex-col m-0">
       <NavBar />
-      <div className="container mt-24 mx-auto px-12 py-4">
+      <div className="mx-auto max-sm:mt-24 px-12 py-4">
         <HeaderSection />
         <AboutSection />
         <ProjectSection />
+        <ContactSection />
       </div>
+      <FooterSection />
     </main>
   );
 }

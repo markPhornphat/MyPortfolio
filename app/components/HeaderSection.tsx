@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import AnimationComponent from "./AnimationComponent";
+import Link from "next/link";
 
 const HeaderSection = () => {
   return (
-    <section>
-      <div className="grid grid-cols-1 lg:grid-cols-12">
+    <section className="min-h-screen flex items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-40">
         <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl font-extrabold">
+          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal justify-self-start font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-slate-500">
               Hello, I'm{" "}
             </span>
@@ -18,12 +19,13 @@ const HeaderSection = () => {
             error expedita est necessitatibus ipsa explicabo minus inventore.
           </p>
           <div>
-            <button
+            <Link
               className="px-6 py-3 w-full sm:w-fit rounded-full mr-6 bg-gray-100 hover:bg-[#ffd7a0a1]
 bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
+              href="#contact"
             >
               Hire me
-            </button>
+            </Link>
             <button className="px-1.5 py-1.5 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-gray-200 mt-5">
               <span className="block bg-white hover:bg-[#ffffff33] rounded-full px-5 py-2 transition duration-150">
                 Download CV

@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { animate, motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
@@ -9,7 +10,7 @@ const projectsData = [
     title: "LearningMate",
     description: "Make university student live better",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/LonebirdRamin/LearningMate",
     previewUrl: "/",
   },
   {
@@ -17,13 +18,15 @@ const projectsData = [
     title: "Online Content Work Tracking",
     description: "Project Management Software for video content",
     tag: ["Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/markPhornphat/OnlineWorkTracking",
     previewUrl: "/",
   },
 ];
 
 const ProjectSection = () => {
   const [tag, setTag] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); //Come to view set to true
   // const [selected, isSelected] = useState(false);
 
   const handleTabChange = (newTag: string) => {
@@ -34,10 +37,20 @@ const ProjectSection = () => {
     project.tag.includes(tag)
   );
 
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
-    <section>
+    <section
+      id="projects"
+      className="min-h-screen flex items-center justify-center"
+    >
       <div>
-        <h2 className="text-4xl text-center font-bold mb-4">My Projects</h2>
+        <h2 className="text-4xl xl:text-5xl xl:mb-10 text-center font-bold mb-4">
+          My Projects
+        </h2>
         <div className="flex flex-row justify-center items-center gap-2">
           <ProjectTag
             onClick={handleTabChange}
@@ -55,18 +68,26 @@ const ProjectSection = () => {
             isSelected={tag === "Mobile"}
           />
         </div>
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12 py-6">
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl="/image/markProfilePic.jpg"
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
+        <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 py-6">
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl="/image/markProfilePic.jpg"
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

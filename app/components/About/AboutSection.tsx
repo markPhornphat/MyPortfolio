@@ -71,15 +71,15 @@ const AboutSection = () => {
     });
   };
   return (
-    <section className="">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+    <section className="min-h-screen flex items-center" id="about">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 sm:py-16 xl:px-16 ">
         <Image
           alt="aboutPicture"
           src="/image/MarkWithNamtan.jpg"
-          width={300}
-          height={300}
+          width={500}
+          height={500}
         />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <div className="md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base md:text-lg">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta

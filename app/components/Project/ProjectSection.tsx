@@ -10,6 +10,7 @@ const projectsData = [
     title: "LearningMate",
     description: "Make university student live better",
     tag: ["All", "Web"],
+    imageUrl: "/image/markProfilePic.jpg",
     gitUrl: "https://github.com/LonebirdRamin/LearningMate",
     previewUrl: "/",
   },
@@ -18,6 +19,7 @@ const projectsData = [
     title: "Online Content Work Tracking",
     description: "Project Management Software for video content",
     tag: ["Web"],
+    imageUrl: "/image/markProfilePic.jpg",
     gitUrl: "https://github.com/markPhornphat/OnlineWorkTracking",
     previewUrl: "/",
   },
@@ -81,7 +83,7 @@ const ProjectSection = () => {
                 key={project.id}
                 title={project.title}
                 description={project.description}
-                imgUrl="/image/markProfilePic.jpg"
+                imgUrl={project.imageUrl}
                 gitUrl={project.gitUrl}
                 previewUrl={project.previewUrl}
               />

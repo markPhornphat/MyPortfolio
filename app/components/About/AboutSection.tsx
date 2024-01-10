@@ -15,9 +15,14 @@ const TAB_DATA = [
         <li>JavaScript</li>
         <li>TypeScript</li>
         <li>React</li>
-        <li>ReactNative</li>
+        <li>ReactNativ</li>
         <li>Next.js</li>
         <li>Python</li>
+        <li>Arduino</li>
+        <li>Figma</li>
+        <li>Git</li>
+        <li>Tailwind</li>
+        <li>MySQL</li>
       </ul>
     ),
   },
@@ -71,7 +76,7 @@ const AboutSection = () => {
     });
   };
   return (
-    <section className="min-h-screen flex items-center" id="about">
+    <section className="w-full h-screen flex items-center" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 sm:py-16 xl:px-16 ">
         <Image
           alt="aboutPicture"
@@ -82,11 +87,19 @@ const AboutSection = () => {
         <div className="md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base md:text-lg">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-            veniam deleniti nulla. Atque unde voluptatibus, officia iure quod
-            ex, maxime sint pariatur dicta doloribus delectus nemo eum fugiat
-            quis quo.
+            Currently a third-year student studying at the King Mongkut’s
+            University of Technology Thonburi (KMUTT), majoring in computer
+            engineering.
           </p>
+          <ul className="list-disc ml-10">
+            <li>I'm based in Bangkok, Thailand</li>
+            <li>You can contact me at phornphat_mark@hotmail.com</li>
+            <li>I'm practicing Fullstack Tools</li>
+            <li>
+              I'm interested in Coding, Hardware, Mathematics, Science, and
+              Business.
+            </li>
+          </ul>
           <div className="flex flex-row mt-8">
             <TabButton
               selectTab={() => handleTabChange("Skills")}

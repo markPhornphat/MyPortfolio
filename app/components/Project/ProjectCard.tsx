@@ -27,6 +27,7 @@ const ProjectCard = ({
           {/* Github link */}
           <Link
             href={gitUrl}
+            target="_blank"
             className="h-14 w-14 mr-2 border-2 relative rounded-full border-slate-300 hover:border-white group/link"
           >
             <CodeBracketIcon className="h-10 w-10 text-slate-300 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white" />

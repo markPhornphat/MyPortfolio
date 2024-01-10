@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const HeaderSection = () => {
   return (
-    <section className="min-h-screen flex items-center">
+    <section className="w-full h-screen flex items-center">
       <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-40">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal justify-self-start font-extrabold">
@@ -14,9 +14,10 @@ const HeaderSection = () => {
             </span>
             <AnimationComponent />
           </h1>
-          <p className="sm:text-lg lg:text-xl mb-8 mr-10 lg:mb-0">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-            error expedita est necessitatibus ipsa explicabo minus inventore.
+          <p className="text-slate-600 sm:text-lg lg:text-xl mb-8 mr-10 lg:mb-0">
+            Hello, I&apos;m Phornphat Chanthanarak, but you can call me Mark.
+            Currently, I am a computer engineering student at KMUTT. I have a
+            passion for coding, playing the guitar, and watching movies.
           </p>
           <div>
             <Link
@@ -26,16 +27,18 @@ bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
             >
               Hire me
             </Link>
-            <Link
-              className="px-1.5 py-1.5 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-gray-200 mt-5"
+            <a
+              className="xl:inline-block block px-1.5 py-1.5 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-gray-200 mt-5"
               href={
-                "https://drive.google.com/file/d/1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm/view?usp=drive_link"
+                "https://drive.usercontent.google.com/uc?id=1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm&export=download"
+                // "https://drive.google.com/file/d/1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm/view?usp=sharing"
               }
+              // target="_blank"
             >
               <span className="block bg-white hover:bg-[#ffffff33] rounded-full px-5 py-2 transition duration-150">
                 Download CV
               </span>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">

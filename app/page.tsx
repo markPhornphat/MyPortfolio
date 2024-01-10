@@ -6,6 +6,7 @@ import AboutSection from "./components/About/AboutSection";
 import ProjectSection from "./components/Project/ProjectSection";
 import ContactSection from "./components/Contact/ContactSection";
 import FooterSection from "./components/FooterSection";
+import SkillSection from "./components/Skill/SkillSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="mx-auto max-sm:mt-24 px-12 py-4">
         <HeaderSection />
         <AboutSection />
+        <SkillSection />
         <ProjectSection />
         <ContactSection />
       </div>

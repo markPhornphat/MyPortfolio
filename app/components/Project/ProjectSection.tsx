@@ -9,7 +9,7 @@ const projectsData = [
     id: 1,
     title: "LearningMate",
     description: "Make university student live better",
-    tag: ["All", "Web"],
+    tag: ["All", "Mobile"],
     imageUrl: "/image/markProfilePic.jpg",
     gitUrl: "https://github.com/LonebirdRamin/LearningMate",
     previewUrl: "/",
@@ -18,7 +18,7 @@ const projectsData = [
     id: 2,
     title: "Online Content Work Tracking",
     description: "Project Management Software for video content",
-    tag: ["Web"],
+    tag: ["All", "Web"],
     imageUrl: "/image/markProfilePic.jpg",
     gitUrl: "https://github.com/markPhornphat/OnlineWorkTracking",
     previewUrl: "/",
@@ -47,7 +47,7 @@ const ProjectSection = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center"
+      className="w-full h-screen flex items-center justify-center"
     >
       <div>
         <h2 className="text-4xl xl:text-5xl xl:mb-10 text-center font-bold mb-4">

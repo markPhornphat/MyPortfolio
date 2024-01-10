@@ -57,20 +57,42 @@ const ContactSection = () => {
     >
       <div className="xl:ml-24">
         <h5 className="text-xl font-bold my-2">Let's connect</h5>
-        <p className="text-slate-500 mb-4 max-w-md">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus
-          reiciendis cum earum nemo eaque unde odit perferendis, molestias
-          dignissimos possimus, architecto vel mollitia ipsum, laudantium ipsa
-          commodi! Eius, repellendus hic.
-        </p>
+        <div className="text-slate-500 mb-4 max-w-md">
+          <p>
+            If you wish to reach me directly, you can contact me via email or
+            phone.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Email:&nbsp;
+                <a
+                  href="mailto:phornphat_mark@hotmail.com"
+                  className="text-blue-700"
+                >
+                  Phornphat_mark@hotmail.com
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                Phone:&nbsp;
+                <a href="tel:+66922549246" className="text-blue-700">
+                  (+66) 92-254-9246
+                </a>
+              </p>
+            </li>
+          </ul>
+        </div>
+
         <div className="socials flex flex-row gap-2 ">
-          <Link href={"https://github.com/markPhornphat"}>
+          <Link href={"https://github.com/markPhornphat"} target="_blank">
             <Image src={GithubIcon} alt="GithubIcon" width={50} />
           </Link>
-          <Link href={"https://www.instagram.com/marklileo/"}>
+          <Link href={"https://www.instagram.com/marklileo/"} target="_blank">
             <Image src={InstagramIcon} alt="InstagramIcon" width={50} />
           </Link>
-          <Link href={"https://www.linkedin.com/in/marklileo/"}>
+          <Link href={"https://www.linkedin.com/in/marklileo/"} target="_blank">
             <Image src={LinkedInIcon} alt="LinkedInIcon" width={50} />
           </Link>
         </div>

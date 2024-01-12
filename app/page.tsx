@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import HeaderSection from "./components/HeaderSection";
 import NavBar from "./components/navbar/NavBar";
 import AboutSection from "./components/About/AboutSection";
@@ -20,6 +21,7 @@ export default function Home() {
         <ContactSection />
       </div>
       <FooterSection />
+      <SpeedInsights />
     </main>
   );
 }

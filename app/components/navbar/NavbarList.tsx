@@ -11,6 +11,7 @@ const NavbarList: React.FC<NavbarListProp> = ({
   setNavbarOpen,
 }) => {
   return (
+    // Navigation bar on mobile ==> When screen size is medium ==> show button
     <div className="mobile-menu block md:hidden">
       {!navBarOpen ? (
         <button

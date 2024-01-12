@@ -11,19 +11,19 @@ import NavbarList from "./NavbarList";
 const navLinks = [
   {
     title: "About",
-    path: "#/About",
+    path: "#about",
   },
   {
     title: "Skills",
-    path: "#/Skills",
+    path: "#skills",
   },
   {
     title: "Projects",
-    path: "#/Projects",
+    path: "#projects",
   },
   {
     title: "Contact",
-    path: "#/Contact",
+    path: "#contact",
   },
 ];
 

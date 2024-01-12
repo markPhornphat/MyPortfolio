@@ -60,7 +60,7 @@ const ContactSection = () => {
       id="contact"
     >
       <div className="xl:ml-24">
-        <h5 className="text-xl font-bold my-2">Let's connect</h5>
+        <h5 className="text-xl font-bold my-2">Let&apos;s connect</h5>
         <div className="text-slate-500 mb-4 max-w-md">
           <p>
             If you wish to reach me directly, you can contact me via email or

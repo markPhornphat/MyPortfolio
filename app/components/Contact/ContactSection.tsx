@@ -6,6 +6,7 @@ import Image from "next/image";
 import GithubIcon from "../../../public/image/GitHub-Mark-ea2971cee799.png";
 import InstagramIcon from "../../../public/image/instagram-icon-2048x2048-uc6feurl.png";
 import LinkedInIcon from "../../../public/image/LinkedInIcon.png";
+import { animate, motion, useInView } from "framer-motion";
 
 const ContactSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -51,7 +52,10 @@ const ContactSection = () => {
     }
   };
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4"
       id="contact"
     >
@@ -159,7 +163,7 @@ const ContactSection = () => {
           </div>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

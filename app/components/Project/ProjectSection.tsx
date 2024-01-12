@@ -10,7 +10,7 @@ const projectsData = [
     title: "LearningMate",
     description: "Make university student live better",
     tag: ["All", "Mobile"],
-    imageUrl: "/image/markProfilePic.jpg",
+    imageUrl: "/image/LearningMate.png",
     gitUrl: "https://github.com/LonebirdRamin/LearningMate",
     previewUrl: "/",
   },
@@ -19,9 +19,50 @@ const projectsData = [
     title: "Online Content Work Tracking",
     description: "Project Management Software for video content",
     tag: ["All", "Web"],
-    imageUrl: "/image/markProfilePic.jpg",
+    imageUrl: "/image/OnlineContentWorkTracking.png",
     gitUrl: "https://github.com/markPhornphat/OnlineWorkTracking",
     previewUrl: "/",
+  },
+  {
+    id: 3,
+    title: "Fish Feeder",
+    description:
+      "Automated fish feeding, temperature monitoring, and real-time graph visualization," +
+      "all accessible and controlled via your mobile phone.",
+    tag: ["All", "Hardware"],
+    imageUrl: "/image/markProfilePic.jpg",
+    gitUrl: "https://github.com/markPhornphat/fishFeeder",
+    previewUrl: "/",
+  },
+  {
+    id: 4,
+    title: "ProjectPrediction",
+    description:
+      "Predictive model that assesses the likelihood of success for Kickstarter campaigns by analyzing project details.",
+    tag: ["All", "Data"],
+    imageUrl: "/image/ProjectPrediction.png",
+    gitUrl: "https://github.com/markPhornphat/ProjectPrediction",
+    previewUrl: "/",
+  },
+  {
+    id: 5,
+    title: "Store Management System",
+    description:
+      "The store management application that efficiently visualizes analytics data through dynamic graphs.",
+    tag: ["All", "Web"],
+    imageUrl: "/image/StoreManagementSystem.png",
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 6,
+    title: "Digital Clock",
+    description:
+      "A digital clock with countdown, alarm, and stopwatch functionalities was created on an AMDArtix 7 board. The code, developed using Verilog language, encompasses both the functionality and features of the clock.",
+    tag: ["All", "Hardware"],
+    imageUrl: "/image/DigitalClock.png",
+    gitUrl: "/",
+    previewUrl: "/image/DigitalClock.png",
   },
 ];
 
@@ -45,9 +86,12 @@ const ProjectSection = () => {
   };
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
       id="projects"
-      className="w-full h-screen flex items-center justify-center"
+      className="w-full min-h-screen flex items-center justify-center scroll-mt-32"
     >
       <div>
         <h2 className="text-4xl xl:text-5xl xl:mb-10 text-center font-bold mb-4">
@@ -69,8 +113,18 @@ const ProjectSection = () => {
             name="Mobile"
             isSelected={tag === "Mobile"}
           />
+          <ProjectTag
+            onClick={handleTabChange}
+            name="Data"
+            isSelected={tag === "Data"}
+          />
+          <ProjectTag
+            onClick={handleTabChange}
+            name="Hardware"
+            isSelected={tag === "Hardware"}
+          />
         </div>
-        <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12 py-6">
+        <ul ref={ref} className="grid md:grid-cols-4 gap-8 md:gap-12 py-6">
           {filteredProjects.map((project, index) => (
             <motion.li
               key={index}
@@ -85,13 +139,13 @@ const ProjectSection = () => {
                 description={project.description}
                 imgUrl={project.imageUrl}
                 gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
+                previewUrl={project.imageUrl}
               />
             </motion.li>
           ))}
         </ul>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

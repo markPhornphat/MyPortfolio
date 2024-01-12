@@ -2,6 +2,7 @@
 import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { animate, motion, useInView } from "framer-motion";
 
 const TAB_DATA = [
   {
@@ -76,7 +77,13 @@ const AboutSection = () => {
     });
   };
   return (
-    <section className="w-full h-screen flex items-center" id="about">
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+      className="w-full min-h-screen flex items-center scroll-mt-10"
+      id="about"
+    >
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 sm:py-16 xl:px-16 ">
         <Image
           alt="aboutPicture"
@@ -125,7 +132,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

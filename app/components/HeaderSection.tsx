@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const HeaderSection = () => {
   return (
-    <section className="w-full h-screen flex items-center">
+    <section className="w-full min-h-screen flex items-center">
       <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-40">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal justify-self-start font-extrabold">

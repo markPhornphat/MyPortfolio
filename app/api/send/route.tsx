@@ -4,7 +4,8 @@ import { Resend } from "resend";
 import React from "react";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-let fromEmail: string = process.env.FROM_EMAIL || "";
+// let fromEmail: string = process.env.FROM_EMAIL || "";
+let fromEmail = "onboarding@resend.dev";
 
 export async function POST(req: Request, Res: Response) {
   // const { body } = req;

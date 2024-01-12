@@ -151,7 +151,7 @@ const ContactSection = () => {
           <div className="mb-6">
             <button
               type="submit"
-              className="bg-slate-400 hover:opacity-80 font-medium py-2.5 px-5 rounded-full w-full"
+              className="bg-slate-400 hover:opacity-80 font-medium py-2.5 px-5 rounded-full w-full active:opacity-50"
             >
               Send Message
             </button>

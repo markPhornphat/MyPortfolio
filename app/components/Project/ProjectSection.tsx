@@ -30,7 +30,7 @@ const projectsData = [
       "Automated fish feeding, temperature monitoring, and real-time graph visualization," +
       "all accessible and controlled via your mobile phone.",
     tag: ["All", "Hardware"],
-    imageUrl: "/image/markProfilePic.jpg",
+    imageUrl: "/image/fishFeeder.jpg",
     gitUrl: "https://github.com/markPhornphat/fishFeeder",
     previewUrl: "/",
   },

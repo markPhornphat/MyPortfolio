@@ -12,7 +12,7 @@ const SkillSection = () => {
         </p>
         <a href="https://skillicons.dev">
           <img
-            src="https://skillicons.dev/icons?i=js,ts,html,css,tailwind,arduino,figma,react,nextjs,linux,nodejs,mongodb,mysql,git,postman,py,selenium,vscode,c,discord,firebase,php&amp;perline=7"
+            src="https://skillicons.dev/icons?i=js,ts,html,css,tailwind,arduino,figma,react,nextjs,linux,mongodb,mysql,git,postman,py,selenium,vscode,c,discord,firebase,php&amp;perline=7"
             width="700"
             height="700"
           />

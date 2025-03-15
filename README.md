@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio Project
 
-## Getting Started
+This project consists of a **Next.js frontend** and an **Express.js backend** with a **MySQL database**. The frontend is deployed on **Vercel**, and the backend is deployed on **Render** with **PlanetScale** (MySQL).
 
-First, run the development server:
+## Folder Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### **Frontend (Next.js)**
+
+Located inside the `frontend/` directory.
+
+```
+frontend/
+│── public/          # Static assets (images, favicon, etc.)
+│── src/
+│   ├── components/  # Reusable UI components
+│   ├── hooks/       # Custom React hooks
+│   ├── layouts/     # Page layouts
+│   ├── pages/       # Next.js routing (if using pages router)
+│   ├── styles/      # Global & modular CSS
+│   ├── utils/       # Helper functions
+│   ├── context/     # React context providers
+│   ├── services/    # API calls to backend
+│── .env.local       # Environment variables
+│── next.config.js   # Next.js configuration
+│── package.json     # Dependencies & scripts
+│── tsconfig.json    # TypeScript configuration (if using TS)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Backend (Express.js + MySQL)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Located inside the `backend/` directory.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+backend/
+│── src/
+│   ├── config/       # Database connection & environment setup
+│   ├── controllers/  # Business logic (e.g., user authentication)
+│   ├── middleware/   # Middleware (e.g., authentication, logging)
+│   ├── models/       # Database models & schema
+│   ├── routes/       # Express routes (API endpoints)
+│   ├── utils/        # Helper functions
+│   ├── app.js        # Express app initialization
+│   ├── server.js     # Server entry point
+│── .env              # Environment variables (DB credentials, JWT secrets)
+│── package.json      # Dependencies & scripts
+│── README.md         # Documentation
+```
 
-## Learn More
+## **Installation & Setup**
 
-To learn more about Next.js, take a look at the following resources:
+### **1. Clone the Repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+git clone https://github.com/your-username/my-portfolio-project.git
+cd my-portfolio-project
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### **2. Setup & Run Backend**
 
-## Deploy on Vercel
+```sh
+cd backend
+npm install
+cp .env.example .env  # Add your database credentials here
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **3. Setup & Run Frontend**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```sh
+cd ../frontend
+npm install
+cp .env.local.example .env.local  # Add backend API URL
+npm run dev
+```
+
+## **Deployment**
+
+- **Frontend:** Deployed on Vercel
+- **Backend:** Deployed on Render
+- **Database:** Hosted on PlanetScale (MySQL)
+
+## **API Endpoints**
+
+| Method | Endpoint   | Description       |
+| ------ | ---------- | ----------------- |
+| GET    | /api/users | Fetch all users   |
+| POST   | /api/users | Create a new user |
+
+## **License**
+
+This project is open-source and free to use under the MIT License.

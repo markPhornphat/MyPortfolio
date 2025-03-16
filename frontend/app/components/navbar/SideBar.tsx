@@ -54,12 +54,12 @@ const SideBar = () => {
           <Link
             href={li.href}
             key={`${li.title}_${li.href}`}
-            className={`flex w-36 pl-5 items-center rounded-2xl py-3 gap-2 hover:opacity-70 ${
+            className={`flex w-auto pl-5 items-center rounded-2xl py-3 px-4 gap-2 hover:opacity-70 ${
               `${pathName}` === li.href ? "bg-slate-400" : "bg-slate-200"
             }`}
           >
             <div className="rounded-md bg-white px-1 py-1">{li.icon}</div>
-            <div>{li.title}</div>
+            <div className="hidden md:block">{li.title}</div>
           </Link>
         ))}
       </div>

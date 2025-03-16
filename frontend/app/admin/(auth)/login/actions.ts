@@ -16,7 +16,7 @@ export async function login(formData: FormData) {
     console.log("Error", error);
   }
 
-  redirect("/admin");
+  redirect("/admin/home");
 }
 
 export async function signup(formData: FormData) {

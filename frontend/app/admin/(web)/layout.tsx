@@ -1,7 +1,6 @@
+import SideBar from "@/app/components/navbar/SideBar";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import SideBar from "../components/navbar/SideBar";
-// import { redirect } from "next/navigation";
 
 const handleLogout = async () => {
   "use server";
@@ -35,7 +34,7 @@ export default async function AdminLayout({
         </div>
       </div>
       {/* CHLIDREN */}
-      <div className="bg-white mt-16 ml-48 p-4">{children}</div>
+      <div className="bg-white mt-16 ml-48">{children}</div>
       {/* TOP BAR */}
       <div className="fixed h-16 top-0 left-48 right-0 border-slate-500 flex justify-end items-center bg-slate-50 shadow-md">
         <div className="flex my-3 mr-5">

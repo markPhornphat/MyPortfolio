@@ -1,9 +1,23 @@
-import React from "react";
+// import React, { useEffect } from "react";
 import Image from "next/image";
 import AnimationComponent from "./AnimationComponent";
 import Link from "next/link";
+import { getHomepage } from "../admin/(web)/home/action";
+import { createClient } from "@/utils/supabase/server";
 
-const HeaderSection = () => {
+const HeaderSection = async () => {
+  // useEffect(() => {
+  //   const supa
+  //   console.log(res);
+  // }, []);
+  const getHomepageData = async () => {
+    const supabase = createClient();
+    const res = await getHomepage(supabase);
+    if (!res) return null;
+    return res[0];
+  };
+
+  const data = await getHomepageData();
   return (
     <section className="w-full min-h-screen flex items-center">
       <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-40">
@@ -12,12 +26,23 @@ const HeaderSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-slate-500">
               Hello, I&apos;m{" "}
             </span>
-            <AnimationComponent />
+            <AnimationComponent
+              data={
+                Array.isArray(data?.animationList)
+                  ? data?.animationList
+                  : JSON.parse(
+                      typeof data?.animationList == "string"
+                        ? data?.animationList
+                        : ""
+                    )
+              }
+            />
           </h1>
           <p className="text-slate-600 sm:text-lg lg:text-xl mb-8 mr-10 lg:mb-0">
-            Hello, I&apos;m Phornphat Chanthanarak, but you can call me Mark.
+            {data?.description}
+            {/* Hello, I&apos;m Phornphat Chanthanarak, but you can call me Mark.
             Currently, I am a computer engineering student at KMUTT. I have a
-            passion for coding, playing the guitar, and watching movies.
+            passion for coding, playing the guitar, and watching movies. */}
           </p>
           <div>
             <Link
@@ -30,7 +55,8 @@ bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
             <a
               className="xl:inline-block block px-1.5 py-1.5 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-gray-200 mt-5"
               href={
-                "https://drive.usercontent.google.com/uc?id=1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm&export=download"
+                data?.resumeURL
+                // "https://drive.usercontent.google.com/uc?id=1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm&export=download"
                 // "https://drive.google.com/file/d/1IL2MiV7_pILPOur9X-8geUoSJ9dse8xm/view?usp=sharing"
               }
               // target="_blank"

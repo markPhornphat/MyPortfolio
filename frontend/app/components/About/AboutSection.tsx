@@ -94,7 +94,7 @@ const AboutSection = () => {
         <div className="md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base md:text-lg">
-            Currently a third-year student studying at the King Mongkut’s
+            Currently a fourth-year student studying at the King Mongkut’s
             University of Technology Thonburi (KMUTT), majoring in computer
             engineering.
           </p>

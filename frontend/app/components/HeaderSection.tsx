@@ -5,11 +5,18 @@ import Link from "next/link";
 import { getHomepage } from "../admin/(web)/home/action";
 import { createClient } from "@/utils/supabase/server";
 
+export async function getServerSideProps() {
+  console.log("Supabase URL:", process.env.SUPABASE_URL);
+  console.log(
+    "Supabase Key:",
+    process.env.SUPABASE_ANON_KEY ? "Exists" : "Missing"
+  );
+
+  return { props: {} };
+}
+
 const HeaderSection = async () => {
-  // useEffect(() => {
-  //   const supa
-  //   console.log(res);
-  // }, []);
+  const res = getServerSideProps();
   const getHomepageData = async () => {
     const supabase = createClient();
     const res = await getHomepage(supabase);

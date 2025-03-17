@@ -12,9 +12,13 @@ export async function getHomepage(
     .from("Homepage")
     .select("*");
 
-  if (error || !response) {
-    console.error("Error while fetching homepage: ", error);
-    // return { data: {error?.message} || "No data found", success: false };
+  console.log("Fetching homepage data...");
+  console.log("Supabase Response:", response);
+  console.log("Supabase Error:", error);
+
+  if (error) {
+    console.error("Error while fetching homepage:", error);
+    return null;
   }
 
   return response;

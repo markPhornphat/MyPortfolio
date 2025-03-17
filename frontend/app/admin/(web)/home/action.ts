@@ -1,9 +1,16 @@
 import { createClient } from "@/utils/supabase/client";
 import { HomepageType } from "./type";
+import { SupabaseClient } from "@supabase/supabase-js";
 
-export async function getHomepage(): Promise<HomepageType[] | null> {
-  const supabase = createClient();
-  let { data: response, error } = await supabase.from("Homepage").select("*");
+export async function getHomepage(
+  supabase:
+    | SupabaseClient<any, "public", any>
+    | Promise<SupabaseClient<any, "public", any>>
+): Promise<HomepageType[] | null> {
+  // const supabase = createClient();
+  let { data: response, error } = await (await supabase)
+    .from("Homepage")
+    .select("*");
 
   if (error || !response) {
     console.error("Error while fetching homepage: ", error);

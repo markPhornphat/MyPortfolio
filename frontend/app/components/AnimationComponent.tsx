@@ -1,18 +1,11 @@
 "use client";
 import { TypeAnimation } from "react-type-animation";
 
-const AnimationComponent = () => {
+const AnimationComponent = ({ data }: { data: string[] }) => {
+  // const temp = data.flatMap(li => [li, 3000]);
   return (
     <TypeAnimation
-      sequence={[
-        // Same substring at the start will only be typed out once, initially
-        "Mark",
-        // 1000, // wait 1s before replacing "Mice" with "Hamsters"
-        // "Front-end Developer",
-        1000,
-        "Full-stack Developer",
-        1000,
-      ]}
+      sequence={data.flatMap((li) => [li, 3000])}
       wrapper="span"
       speed={50}
       repeat={Infinity}

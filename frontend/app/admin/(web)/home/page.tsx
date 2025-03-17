@@ -3,6 +3,7 @@ import { SpinnerGap, Trash } from "@phosphor-icons/react";
 import React, { useEffect, useState } from "react";
 import { getHomepage, updateHomepage } from "./action";
 import { HomepageType } from "./type";
+import { createClient } from "@/utils/supabase/client";
 
 const HomePage = () => {
   const [count, setCount] = useState<number>(1);
@@ -13,7 +14,8 @@ const HomePage = () => {
 
   async function getData() {
     setPageLoading(true);
-    const res = await getHomepage();
+    const supabase = createClient();
+    const res = await getHomepage(supabase);
     if (res) {
       const { id, animationList, description, resumeURL } = res[0];
       let parsedAnimationList: string[];

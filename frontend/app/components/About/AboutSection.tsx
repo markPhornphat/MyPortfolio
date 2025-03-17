@@ -42,7 +42,7 @@ const TAB_DATA = [
           </ul>
         </li>
         <li>
-          King Mongkut's University of Technology Thonburi (KMUTT)
+          King Mongkut&apos;s University of Technology Thonburi (KMUTT)
           <ul className="list-disc pl-5">
             <li>
               <span className="font-semibold">GPAX: </span>
@@ -94,16 +94,16 @@ const AboutSection = () => {
         <div className="md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base md:text-lg">
-            Currently a third-year student studying at the King Mongkut’s
+            Currently a fourth-year student studying at the King Mongkut’s
             University of Technology Thonburi (KMUTT), majoring in computer
             engineering.
           </p>
           <ul className="list-disc ml-10">
-            <li>I'm based in Bangkok, Thailand</li>
+            <li>I&apos;m based in Bangkok, Thailand</li>
             <li>You can contact me at phornphat_mark@hotmail.com</li>
-            <li>I'm practicing Fullstack Tools</li>
+            <li>I&apos;m practicing Fullstack Tools</li>
             <li>
-              I'm interested in Coding, Hardware, Mathematics, Science, and
+              I&apos;m interested in Coding, Hardware, Mathematics, Science, and
               Business.
             </li>
           </ul>

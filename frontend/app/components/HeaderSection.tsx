@@ -10,7 +10,6 @@ const HeaderSection = async () => {
     const supabase = createClient();
     const res = await getHomepage(supabase);
     if (!res) return null;
-    console.log("This is my res: ", res[0]);
     return res[0];
   };
 

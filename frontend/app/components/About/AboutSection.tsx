@@ -4,6 +4,10 @@ import Image from "next/image";
 import TabButton from "./TabButton";
 import { animate, motion, useInView } from "framer-motion";
 
+// ["I'm based in Bangkok, Thailand.",
+//   "You can contact me at phornphat_mark@hotmail.com.",
+//   "I'm practicing Fullstack Tools.",
+//   "I'm interested in Coding, Hardware, Mathematics, Science, and Business."]
 const TAB_DATA = [
   {
     title: "Skills",

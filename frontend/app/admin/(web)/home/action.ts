@@ -12,10 +12,6 @@ export async function getHomepage(
     .from("Homepage")
     .select("*");
 
-  console.log("Fetching homepage data...");
-  console.log("Supabase Response:", response);
-  console.log("Supabase Error:", error);
-
   if (error) {
     console.error("Error while fetching homepage:", error);
     return null;

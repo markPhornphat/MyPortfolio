@@ -9,6 +9,8 @@ const Page = async () => {
   if (error || !data?.user) {
     console.log(error);
     redirect("/admin/login");
+  } else {
+    redirect("admin/home");
   }
 
   return (

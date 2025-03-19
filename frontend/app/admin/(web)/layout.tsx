@@ -5,7 +5,6 @@ import Link from "next/link";
 const handleLogout = async () => {
   "use server";
   const supabase = await createClient();
-  console.log("Test");
   const { error } = await supabase.auth.signOut();
   if (error) {
     console.log("Error logout: ", error);

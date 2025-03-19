@@ -47,7 +47,6 @@ const ContactSection = () => {
     const response = await fetch(endPoint, options);
 
     if (response.status === 200) {
-      console.log("Message sent!");
       setEmailSubmitted(true);
     }
   };

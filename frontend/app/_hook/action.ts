@@ -1,25 +1,44 @@
 import { createClient } from "@/utils/supabase/client";
 import { SupabaseClient } from "@supabase/supabase-js";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-export async function getData({
-  supabase,
-  tableName,
-}: {
+export function useFetchData(
   supabase:
     | SupabaseClient<any, "public", any>
-    | Promise<SupabaseClient<any, "public", any>>;
-  tableName: string;
-}) {
-  let { data: response, error } = await (await supabase)
-    .from(`"${tableName}"`)
-    .select("*");
+    | Promise<SupabaseClient<any, "public", any>>,
+  tableName: string,
+  setData: React.Dispatch<React.SetStateAction<any>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setError: React.Dispatch<React.SetStateAction<string>>
+) {
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const client = await supabase;
+        const { data: response, error } = await client
+          .from(tableName)
+          .select("*");
 
-  if (error) {
-    console.error("Error while fetching homepage:", error);
-    return null;
-  }
+        if (error) {
+          console.error(`Error while fetching ${tableName}:`, error);
+          setError(error.message);
+          setData(null);
+        } else {
+          setData(response);
+          setError("");
+        }
+      } catch (err: any) {
+        console.error(`Unexpected error while fetching ${tableName}:`, err);
+        setError(err.message || "Unknown error");
+        setData(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  return response;
+    fetchData();
+  }, []);
 }
 
 // export async function updateHomepage(

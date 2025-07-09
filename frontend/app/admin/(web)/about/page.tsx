@@ -91,6 +91,7 @@ const AboutPage = () => {
               {Array.from({ length: count }).map((_, index) => (
                 <input
                   type="text"
+                  key={`description_${index}`}
                   className="w-full my-2 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:outline-none"
                   placeholder="Enter description list..."
                   value={aboutData?.descriptionList[index]}

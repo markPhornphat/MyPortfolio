@@ -51,7 +51,7 @@ const projectsData = [
       "The store management application that efficiently visualizes analytics data through dynamic graphs.",
     tag: ["All", "Web"],
     imageUrl: "/image/StoreManagementSystem.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/markPhornphat",
     previewUrl: "/",
   },
   {
@@ -61,8 +61,38 @@ const projectsData = [
       "A digital clock with countdown, alarm, and stopwatch functionalities was created on an AMDArtix 7 board. The code, developed using Verilog language, encompasses both the functionality and features of the clock.",
     tag: ["All", "Hardware"],
     imageUrl: "/image/DigitalClock.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/markPhornphat",
     previewUrl: "/image/DigitalClock.png",
+  },
+  {
+    id: 7,
+    title: "Businage",
+    description:
+      "A web-based storage management system designed for SMEs to replace paper-based tracking with a digital solution. It helps reduce human error in audits and improves inventory traceability. The tech stack includes Next.js for the frontend, Node.js and Express for the backend, and Supabase as the database. I focused on the frontend, where I built the product input form and a dynamic product list table for easy inventory management.",
+    tag: ["All", "Web"],
+    imageUrl: "/image/businage.png",
+    gitUrl: "https://github.com/greennyumbs/Businage",
+    previewUrl: "/image/businage.png",
+  },
+  {
+    id: 8,
+    title: "P&ID Detector",
+    description:
+      "A dynamic computer vision system to detect and classify instruments from variously sized P&ID PDF files, enabling accurate cost estimation and inventory counting. Built a user-friendly web application with React and Flask, integrating a compressed model for efficient deployment. The system was deployed using AWS Beanstalk and Elastic EC2 with automated CI/CD pipelines to support engineering teams.",
+    tag: ["All", "Web", "Data"],
+    imageUrl: "/image/scgc.png",
+    gitUrl: "https://github.com/markPhornphat",
+    previewUrl: "/image/scgc.png",
+  },
+  {
+    id: 9,
+    title: "Eureka vision",
+    description:
+      "A web application to visualize real-time analytics from smart CCTV systems, enhancing operations and security at One Bangkok and Asiatique malls. Managed the entire software development life cycle including requirement gathering, sprint planning, development, testing, and deployment to a Linux server using containerization. Automated ELT processes by scheduling data ingestion scripts and storing data in a custom-built database..",
+    tag: ["All", "Web"],
+    imageUrl: "/image/tcct.png",
+    gitUrl: "https://github.com/markPhornphat",
+    previewUrl: "/image/tcct.png",
   },
 ];
 

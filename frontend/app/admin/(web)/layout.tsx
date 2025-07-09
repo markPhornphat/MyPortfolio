@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const handleLogout = async () => {
   "use server";
+  console.log("logged out triggered");
   const supabase = await createClient();
   const { error } = await supabase.auth.signOut();
   if (error) {

@@ -50,10 +50,23 @@ const TAB_DATA = [
           <ul className="list-disc pl-5">
             <li>
               <span className="font-semibold">GPAX: </span>
-              3.73
+              3.73 (First-Class Honors)
             </li>
           </ul>
         </li>
+      </ul>
+    ),
+  },
+  {
+    title: "Extracuricular activity",
+    id: "Extracuricular activity",
+    content: (
+      <ul className="list-disc">
+        <li>CPE openhouse | 2022</li>
+        <li>CPE Pre-Freshy | 2022</li>
+        <li>Participant of Intania Case Competition | 2023</li>
+        <li>Teaching Assistance of CPE101 | 2023</li>
+        <li>Green Innovation Award project competition by SCG | 2024</li>
       </ul>
     ),
   },
@@ -62,10 +75,82 @@ const TAB_DATA = [
     id: "experiences",
     content: (
       <ul className="list-disc">
-        <li>CPE openhouse | 2022</li>
-        <li>CPE Pre-Freshy | 2022</li>
-        <li>Participant of Intania Case Competition | 2023</li>
-        <li>Teaching Assistance of CPE101 | 2023</li>
+        <li>
+          <span className="font-bold">SCGC Internship&nbsp;</span>
+          (June - July 2024)
+          <ul className="list-disc ml-6">
+            <li>
+              <span className="font-bold">Role:</span> Computer Engineer
+              Internship
+            </li>
+            <li>
+              <span className="font-bold">Details:</span>
+              <ul className="list-[circle] ml-6">
+                <li>
+                  <span className="font-semibold">Developed</span> a dynamic
+                  computer vision system to detect and classify instruments from
+                  single or multiple P&ID PDF files of various sizes.
+                </li>
+                <li>
+                  <span className="font-semibold">Extracted</span> instrument
+                  data to estimate costs and count quantities, helping{" "}
+                  <span className="font-semibold">reduce time&nbsp;</span>
+                  and&nbsp;<span className="font-semibold">
+                    human errors
+                  </span>{" "}
+                  in engineering workflows.
+                </li>
+                <li>
+                  Built a user-friendly{" "}
+                  <span className="font-semibold">web application</span> using
+                  React and Flask to make the system easily accessible.
+                </li>
+                <li>
+                  <span className="font-semibold">Compressed</span> and{" "}
+                  <span className="font-semibold">integrated</span> the model
+                  for efficient deployment in a web environment.
+                </li>
+                <li>
+                  <span className="font-semibold">Deployed</span> the system
+                  using AWS Beanstalk and Elastic EC2 with an automated CI/CD
+                  pipeline.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span className="font-bold">TCC Technology&nbsp;</span>
+          (August 2024 - May 2025)
+          <ul className="list-disc ml-6">
+            <li>
+              <span className="font-bold">Role:</span> IoT Engineer Intern
+            </li>
+            <li>
+              <span className="font-bold">Details:</span>
+              <ul className="list-[circle] ml-6">
+                <li>
+                  <span className="font-semibold">Implemented</span> a web
+                  application to visualize real-time analytics from smart CCTV
+                  systems, supporting operations and security at{" "}
+                  <span className="font-semibold">One Bangkok</span> and{" "}
+                  <span className="font-semibold">Asiatique</span> malls.
+                </li>
+                <li>
+                  <span className="font-semibold">Covered</span> the entire
+                  SDLC: gathering user requirements, planning sprints,
+                  developing, testing, and deploying the system to a Linux
+                  server using containerization.
+                </li>
+                <li>
+                  <span className="font-semibold">Performed ELT</span> by
+                  scheduling data ingestion scripts and storing results in a
+                  custom-built database.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     ),
   },
@@ -123,6 +208,12 @@ const AboutSection = () => {
               active={tab === "Educations"}
             >
               Educations
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("Extracuricular activity")}
+              active={tab === "Extracuricular activity"}
+            >
+              Extracuricular activity
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("Experiences")}

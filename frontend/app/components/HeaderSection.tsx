@@ -21,9 +21,9 @@ const HeaderSection = async () => {
 
   const data = await getHomepageData();
   return (
-    <section className="w-full min-h-screen flex items-center">
-      <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-40">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
+    <section className="w-full min-h-screen flex items-center ">
+      <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-20 ">
+        <div className="col-span-7 place-self-center text-center sm:text-left ">
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal justify-self-start font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-slate-500 block mb-2">
               Hello, I&apos;m{" "}
@@ -51,7 +51,7 @@ const HeaderSection = async () => {
           <div>
             <Link
               className="px-6 py-3 w-full sm:w-fit rounded-full mr-6 bg-gray-100 hover:bg-[#ffd7a0a1]
-bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
+                bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
               href="#contact"
             >
               Hire me
@@ -71,14 +71,15 @@ bg-gradient-to-br from-[#cebdaa] via-[#e0d0be]"
             </a>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0">
-          <div className="rounded-full bg-gray-300 w-[305px] h-[305px] lg:w-[405px] lg:h-[400px] relative">
+        <div className="col-span-5 justify-self-center lg:justify-self-end mt-8 lg:mt-0">
+          <div className="rounded-full bg-gray-300 w-[305px] h-[305px] lg:w-[455px] lg:h-[455px] relative hover:scale-105 transition-transform duration-300">
             <Image
               src="/image/markProfilePic.jpg"
-              className="rounded-full w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] object-cover absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="rounded-full w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] object-cover absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="profile image"
-              width={300}
-              height={300}
+              width={450}
+              height={450}
+              priority
             />
           </div>
         </div>

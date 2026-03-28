@@ -4,13 +4,19 @@ import AnimationComponent from "./AnimationComponent";
 import Link from "next/link";
 import { getHomepage } from "../admin/(web)/home/action";
 import { createClient } from "@/utils/supabase/server";
+import { fallbackHomepageData } from "@/constants/fallbackData";
 
 const HeaderSection = async () => {
   const getHomepageData = async () => {
-    const supabase = createClient();
-    const res = await getHomepage(supabase);
-    if (!res) return null;
-    return res[0];
+    try {
+      const supabase = createClient();
+      const res = await getHomepage(supabase);
+      if (!res || res.length === 0) return fallbackHomepageData;
+      return res[0];
+    } catch (error) {
+      console.error("Supabase failed, using fallback data", error);
+      return fallbackHomepageData;
+    }
   };
 
   const data = await getHomepageData();
@@ -19,20 +25,22 @@ const HeaderSection = async () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 lg:px-40">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal justify-self-start font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-slate-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#cebdaa] via-[#e0d0be] to-slate-500 block mb-2">
               Hello, I&apos;m{" "}
             </span>
-            <AnimationComponent
-              data={
-                Array.isArray(data?.animationList)
-                  ? data?.animationList
-                  : JSON.parse(
-                      typeof data?.animationList == "string"
-                        ? data?.animationList
-                        : ""
-                    )
-              }
-            />
+            <span className="block h-[80px] sm:h-[100px] lg:h-[150px]">
+              <AnimationComponent
+                data={
+                  Array.isArray(data?.animationList)
+                    ? data?.animationList
+                    : JSON.parse(
+                        typeof data?.animationList == "string"
+                          ? data?.animationList
+                          : "",
+                      )
+                }
+              />
+            </span>
           </h1>
           <p className="text-slate-600 sm:text-lg lg:text-xl mb-8 mr-10 lg:mb-0">
             {data?.description}

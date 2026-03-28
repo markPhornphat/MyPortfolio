@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { getHomepage, updateHomepage } from "./action";
 import { HomepageType } from "./type";
 import { createClient } from "@/utils/supabase/client";
+import { fallbackHomepageData } from "@/constants/fallbackData";
 
 const HomePage = () => {
   const [count, setCount] = useState<number>(1);
@@ -14,9 +15,13 @@ const HomePage = () => {
 
   async function getData() {
     setPageLoading(true);
-    const supabase = createClient();
-    const res = await getHomepage(supabase);
-    if (res) {
+    try {
+      const supabase = createClient();
+      let res = await getHomepage(supabase);
+      if (!res || res.length === 0) {
+        res = [fallbackHomepageData];
+      }
+
       const { id, animationList, description, resumeURL } = res[0];
       let parsedAnimationList: string[];
 
@@ -33,6 +38,9 @@ const HomePage = () => {
         resumeURL,
       });
       setCount(parsedAnimationList.length);
+    } catch (error) {
+      console.error("Error loading data", error);
+    } finally {
       setPageLoading(false);
     }
   }
@@ -44,7 +52,7 @@ const HomePage = () => {
   // Handle Input Changes
   const handleChange = (
     field: keyof HomepageType,
-    value: string | string[]
+    value: string | string[],
   ) => {
     setData((prev) => (prev ? { ...prev, [field]: value } : null));
   };

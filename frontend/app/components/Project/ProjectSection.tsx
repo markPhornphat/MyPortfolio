@@ -86,13 +86,22 @@ const projectsData = [
   },
   {
     id: 9,
-    title: "Eureka vision",
+    title: "EurekaVision",
     description:
       "A web application to visualize real-time analytics from smart CCTV systems, enhancing operations and security at One Bangkok and Asiatique malls. Managed the entire software development life cycle including requirement gathering, sprint planning, development, testing, and deployment to a Linux server using containerization. Automated ELT processes by scheduling data ingestion scripts and storing data in a custom-built database..",
-    tag: ["All", "Web"],
+    tag: ["All", "Web", "Data"],
     imageUrl: "/image/tcct.png",
     gitUrl: "https://github.com/markPhornphat",
     previewUrl: "/image/tcct.png",
+  },
+  {
+    id: 10,
+    title: "Spirits Project",
+    tag: ["All", "Web", "Data"],
+    description:
+      "Developed the Spirits Project, an industrial data platform that integrates multiple plant systems to process and visualize production and utility data. Built scalable backend services and APIs using PostgreSQL and TimescaleDB, leveraging hypertables and continuous aggregates to efficiently handle cumulative time-series metrics such as OEE and downtime. Designed modular frontend and backend components to support multiple CMS modules, while implementing specialized logic for complex processes like water treatment across different sources. Focused on performance optimization, data accuracy, and maintainable architecture for real-time analytics.",
+    imageUrl: "/image/tcct.png",
+    gitUrl: "/image/tcct.png",
   },
 ];
 
@@ -107,7 +116,7 @@ const ProjectSection = () => {
   };
 
   const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
+    project.tag.includes(tag),
   );
 
   const cardVariants = {

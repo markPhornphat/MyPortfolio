@@ -151,6 +151,45 @@ const TAB_DATA = [
             </li>
           </ul>
         </li>
+        <li>
+          <span className="font-bold">TCC Technology&nbsp;</span>
+          (August 2025 - Present)
+          <ul className="list-disc ml-6">
+            <li>
+              <span className="font-bold">Role:</span> IoT Engineer
+            </li>
+            <li>
+              <span className="font-bold">Details:</span>
+              <ul className="list-[circle] ml-6">
+                <li>
+                  <span className="font-semibold">Led end-to-end SDLC</span> for
+                  AI-powered full-stack applications with React, FastAPI, and
+                  PostgreSQL.
+                </li>
+                <li>
+                  <span className="font-semibold">Engineered</span> scalable
+                  real-time computer vision pipelines for multi-CCTV processing.
+                </li>
+                <li>
+                  <span className="font-semibold">
+                    Optimized database architectures
+                  </span>{" "}
+                  and query strategies, reducing execution times by ~95% (from
+                  ~45s to ~2s).
+                </li>
+                <li>
+                  <span className="font-semibold">Automated ETL workflows</span>{" "}
+                  using Apache Airflow and integrated iOS apps via Xcode.
+                </li>
+                <li>
+                  <span className="font-semibold">Collaborated</span> with
+                  cross-functional teams to align technical solutions with
+                  business objectives and scope features.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     ),
   },
@@ -183,17 +222,18 @@ const AboutSection = () => {
         <div className="md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base md:text-lg">
-            Currently a fourth-year student studying at the King Mongkut’s
-            University of Technology Thonburi (KMUTT), majoring in computer
-            engineering.
+            Currently an IoT Engineer at TCC Technology, responsible for
+            end-to-end software development and business analysis, including
+            optimizing web applications for efficient data fetching and working
+            with computer vision for video processing.
           </p>
           <ul className="list-disc ml-10">
             <li>I&apos;m based in Bangkok, Thailand</li>
             <li>You can contact me at phornphat_mark@hotmail.com</li>
             <li>I&apos;m practicing Fullstack Tools</li>
             <li>
-              I&apos;m interested in Coding, Hardware, Mathematics, Science, and
-              Business.
+              I&apos;m interested in developing AI, Website, Mobile Application,
+              and Business.
             </li>
           </ul>
           <div className="flex flex-row mt-8">
